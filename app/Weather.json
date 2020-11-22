@@ -1,0 +1,201 @@
+{
+  "original": {
+    "link": "https://api.nasa.gov/insight_weather/?api_key=DEMO_KEY&feedtype=json&ver=1.0"
+  },
+  "days": [
+    {
+      "id": 1,
+      "Day": "698",
+      "AT": {
+        "av": -69.505,
+        "ct": 225760,
+        "mn": -96.378,
+        "mx": -14.578
+      },
+      "First_UTC": "2020-11-12T09:42:51Z",
+      "HWS": {
+        "av": 6.24,
+        "ct": 113680,
+        "mn": 0.379,
+        "mx": 23.695999999999998
+      },
+      "Last_UTC": "2020-11-13T10:22:25Z",
+      "PRE": {
+        "av": 736.786,
+        "ct": 113316,
+        "mn": 708.1267,
+        "mx": 757.1159
+      },
+      "Season": "fall",
+      "WD": {
+        "15": {
+          "compass_degrees": 337.5,
+          "compass_point": "NNW",
+          "compass_right": -0.382683432365,
+          "compass_up": 0.923879532511,
+          "ct": 2616
+        },
+        "most_common": {
+          "compass_degrees": 292.5,
+          "compass_point": "WNW",
+          "compass_right": -0.923879532511,
+          "compass_up": 0.382683432365,
+          "ct": 24619
+        }
+      }
+    },
+    {
+      "id": 2,
+      "Day": "699",
+      "AT": {
+        "av": -62.693,
+        "ct": 177556,
+        "mn": -97.819,
+        "mx": -9.942
+      },
+      "First_UTC": "2020-11-13T10:22:26Z",
+      "HWS": {
+        "av": 4.242,
+        "ct": 83079,
+        "mn": 0.133,
+        "mx": 14.196
+      },
+      "Last_UTC": "2020-11-14T11:02:01Z",
+      "PRE": {
+        "av": 731.762,
+        "ct": 88778,
+        "mn": 705.1726,
+        "mx": 753.6258
+      },
+      "Season": "fall",
+      "WD": {
+        "15": {
+          "compass_degrees": 337.5,
+          "compass_point": "NNW",
+          "compass_right": -0.382683432365,
+          "compass_up": 0.923879532511,
+          "ct": 2616
+        },
+        "most_common": {
+          "compass_degrees": 292.5,
+          "compass_point": "WNW",
+          "compass_right": -0.923879532511,
+          "compass_up": 0.382683432365,
+          "ct": 24619
+        }
+      }
+    },
+    {
+      "id": 3,
+      "Day": "700",
+      "AT": {
+        "av": -62.856,
+        "ct": 177554,
+        "mn": -96.639,
+        "mx": -13.242
+      },
+      "First_UTC": "2020-11-14T11:02:02Z",
+      "HWS": {
+        "av": 5.734,
+        "ct": 87374,
+        "mn": 0.23,
+        "mx": 20.881999999999998
+      },
+      "Last_UTC": "2020-11-15T11:41:35Z",
+      "PRE": {
+        "av": 735.858,
+        "ct": 88781,
+        "mn": 708.6969,
+        "mx": 760.8631
+      },
+      "Season": "fall",
+      "WD": {
+        "compass_degrees": 292.5,
+        "compass_point": "WNW",
+        "compass_right": -0.923879532511,
+        "compass_up": 0.382683432365,
+        "ct": 32012
+      }
+    },
+    {
+      "id": 4,
+      "Day": "701",
+      "First_UTC": "2020-11-15T11:41:39Z",
+      "Last_UTC": "2020-11-16T12:21:10Z",
+      "PRE": {
+        "av": 730.292,
+        "ct": 127676,
+        "mn": 704.6669,
+        "mx": 755.2486
+      },
+      "Season": "fall",
+      "WD": {
+        "most_common": null
+      }
+    },
+    {
+      "id": 5,
+      "Day": "703",
+      "AT": {
+        "av": -62.119,
+        "ct": 231334,
+        "mn": -95.989,
+        "mx": -8.918
+      },
+      "First_UTC": "2020-11-17T13:00:48Z",
+      "HWS": {
+        "av": 5.95,
+        "ct": 109841,
+        "mn": 0.22899999999999998,
+        "mx": 21.186999999999998
+      },
+      "Last_UTC": "2020-11-18T13:40:22Z",
+      "PRE": {
+        "av": 739.807,
+        "ct": 113872,
+        "mn": 700.7391,
+        "mx": 768.0417
+      },
+      "Season": "fall",
+      "WD": {
+        "compass_degrees": 270,
+        "compass_point": "W",
+        "compass_right": -1,
+        "compass_up": 0,
+        "ct": 35018
+      }
+    },
+    {
+      "id": 6,
+      "Day": "704",
+      "AT": {
+        "av": -62.799,
+        "ct": 334652,
+        "mn": -97.083,
+        "mx": -8.211
+      },
+      "First_UTC": "2020-11-18T13:40:23Z",
+      "HWS": {
+        "av": 4.445,
+        "ct": 154054,
+        "mn": 0.2,
+        "mx": 14.130999999999998
+      },
+      "Last_UTC": "2020-11-19T14:19:57Z",
+      "PRE": {
+        "av": 735.146,
+        "ct": 150242,
+        "mn": 693.8793,
+        "mx": 766.2642
+      },
+      "Season": "fall",
+      "WD": {
+        "compass_degrees": 270,
+        "compass_point": "W",
+        "compass_right": -1,
+        "compass_up": 0,
+        "ct": 50691
+      }
+    }
+  ]
+}

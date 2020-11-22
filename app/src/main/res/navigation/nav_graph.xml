@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/solsFragment">
+
+    <fragment
+        android:id="@+id/solsFragment"
+        android:name="com.usrmusa.marsinsightweather.ui.sols.SolsFragment"
+        android:label="Sols"
+        tools:layout="@layout/sols_fragment" >
+        <action
+            android:id="@+id/action_solsFragment_to_solDetailFragment"
+            app:destination="@id/solDetailFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/solDetailFragment"
+        android:name="com.usrmusa.marsinsightweather.ui.soldetail.SolDetailFragment"
+        android:label="Sol Detail"
+        tools:layout="@layout/sol_detail_fragment" />
+</navigation>
