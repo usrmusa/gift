@@ -1,18 +1,21 @@
 package com.usrmusa.marsinsightweather.ui.soldetail
 
-import android.annotation.SuppressLint
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.usrmusa.marsinsightweather.R
-import com.usrmusa.marsinsightweather.data.entities.Sol
+import androidx.lifecycle.Observer
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CircleCrop
+import com.usrmusa.marsinsightweather.data.entities.Forecast
 import com.usrmusa.marsinsightweather.databinding.SolDetailFragmentBinding
+import com.usrmusa.marsinsightweather.utils.Resource
 import com.usrmusa.marsinsightweather.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
+
 
 @AndroidEntryPoint
 class SolDetailFragment : Fragment() {
@@ -24,45 +27,45 @@ class SolDetailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = SolDetailFragmentBinding.inflate(inflater, container,false)
+        binding = SolDetailFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         arguments?.getInt("id")?.let { viewModel.start(it) }
-        //setupObservers()
+        setupObservers()
     }
 
     private fun setupObservers() {
-        TODO("Not yet implemented")
-        //viewModel.character.observe(viewLifecycleOwner, Observer {
-        //            when (it.status) {
-        //                Resource.Status.SUCCESS -> {
-        //                    bindCharacter(it.data!!)
-        //                    binding.progressBar.visibility = View.GONE
-        //                    binding.characterCl.visibility = View.VISIBLE
-        //                }
-        //
-        //                Resource.Status.ERROR ->
-        //                    Toast.makeText(activity, it.message, Toast.LENGTH_SHORT).show()
-        //
-        //                Resource.Status.LOADING -> {
-        //                    binding.progressBar.visibility = View.VISIBLE
-        //                    binding.characterCl.visibility = View.GONE
-        //                }
-        //            }
-        //        })
+        viewModel.solDetails.observe(viewLifecycleOwner, Observer {
+            when (it.status) {
+                Resource.Status.SUCCESS -> {
+                    bindSol(it.data!!)
+                    binding.progressBar.visibility = View.GONE
+                    binding.solCl.visibility = View.VISIBLE
+                }
+
+                Resource.Status.ERROR ->
+                    Toast.makeText(activity, it.message, Toast.LENGTH_SHORT).show()
+
+                Resource.Status.LOADING -> {
+                    binding.progressBar.visibility = View.VISIBLE
+                    binding.solCl.visibility = View.GONE
+                }
+            }
+        })
     }
 
-    @SuppressLint("SetTextI18n")
-    private fun bindSol(sol: Sol) {
-        binding.date.text = "Nov. 14"
-        binding.max.text = sol.First_UTC
-        binding.min.text = sol.Last_UTC
-        binding.wind.text = sol.Season
-        binding.direction.text = "North West"
-        binding.pressure.text = 583.toString()
+    private fun bindSol(forecast: Forecast) {
+        binding.date.text = forecast.date
+        binding.max.text = forecast.temp.toString()
+        binding.max.text = forecast.humidity.toString()
+        binding.wind.text = forecast.windSpeed.toString()
+        binding.direction.text = forecast.safe.toString()
+        Glide.with(binding.root)
+            .load("solDetails.image")
+            .transform(CircleCrop())
+            .into(binding.image)
     }
-
 }

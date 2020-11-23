@@ -4,10 +4,11 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.usrmusa.marsinsightweather.data.entities.Sol
+import com.usrmusa.marsinsightweather.data.entities.Forecast
 
-@Database(entities = [Sol::class], version = 1, exportSchema = false)
+@Database(entities = [Forecast::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
+
     abstract fun solDao(): SolDao
 
     companion object {
@@ -22,7 +23,7 @@ abstract class AppDatabase : RoomDatabase() {
             }
 
         private fun buildDatabase(appContext: Context) =
-            Room.databaseBuilder(appContext, AppDatabase::class.java, "sols")
+            Room.databaseBuilder(appContext, AppDatabase::class.java, "forecast")
                 .fallbackToDestructiveMigration()
                 .build()
     }

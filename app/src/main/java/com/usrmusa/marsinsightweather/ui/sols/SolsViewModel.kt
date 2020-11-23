@@ -4,8 +4,9 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import com.usrmusa.marsinsightweather.data.repository.SolRepository
 
-class SolsViewModel  @ViewModelInject constructor(
+class SolsViewModel @ViewModelInject constructor(
     private val repository: SolRepository
-): ViewModel() {
+) : ViewModel() {
+
     val sols = repository.getSols()
 }

@@ -6,6 +6,7 @@ import androidx.lifecycle.map
 import com.usrmusa.marsinsightweather.utils.Resource.Status.*
 import kotlinx.coroutines.Dispatchers
 
+
 fun <T, A> performGetOperation(databaseQuery: () -> LiveData<T>,
                                networkCall: suspend () -> Resource<A>,
                                saveCallResult: suspend (A) -> Unit): LiveData<Resource<T>> =

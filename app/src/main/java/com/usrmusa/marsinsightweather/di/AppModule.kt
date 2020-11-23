@@ -16,15 +16,15 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
-
+//https://raw.githubusercontent.com/usrmusa/data/main/schema
 @Module
 @InstallIn(ApplicationComponent::class)
 object AppModule {
 
     @Singleton
     @Provides
-    fun provideRetrofit(gson: Gson): Retrofit = Retrofit.Builder()
-        .baseUrl("https://api.nasa.gov/")
+    fun provideRetrofit(gson: Gson) : Retrofit = Retrofit.Builder()
+        .baseUrl("https://run.mocky.io/")
         .addConverterFactory(GsonConverterFactory.create(gson))
         .build()
 
@@ -40,8 +40,7 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideDatabase(@ApplicationContext appContext: Context) =
-        AppDatabase.getDatabase(appContext)
+    fun provideDatabase(@ApplicationContext appContext: Context) = AppDatabase.getDatabase(appContext)
 
     @Singleton
     @Provides
@@ -49,6 +48,7 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideRepository(remoteDataSource: SolRemoteDataSource, localDataSource: SolDao) =
+    fun provideRepository(remoteDataSource: SolRemoteDataSource,
+                          localDataSource: SolDao) =
         SolRepository(remoteDataSource, localDataSource)
 }
